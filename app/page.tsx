@@ -32,7 +32,7 @@ About Me
           />
         </div>
       </section>
- {/*
+
     {/* Section 2: Photo and About Me */}
       <section className="flex flex-col sm:flex-row items-center justify-center h-screen gap-52 m-16">
         
@@ -83,7 +83,6 @@ About Me
           </ul>
         </div>
       </section> 
-      */}
 
       {/* Section 2: About and Picture */}
 <section className="flex flex-row items-center justify-center h-screen w-full gap-10 p-16">
