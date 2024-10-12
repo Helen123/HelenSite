@@ -2,30 +2,38 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center  gap-16   font-[family-name:var(--font-geist-sans)]"style={{ backgroundColor: '#F4F3E8' }}>
+    <div className="min-h-screen flex flex-col items-center gap-16 font-capriola-regular" style={{ backgroundColor: '#F4F3E8' }}>
       
       {/* Section 1: Greeting */}
-      <section className="flex flex-row items-center justify-center   h-screen  w-full stext-center"style={{ backgroundColor: '#F5F374' }}
-      >
+      <section className="flex flex-row items-center justify-center h-screen w-full text-center" style={{ backgroundColor: '#F5F374' }}>
+        
         {/* Subsection 1 */}
-        <div className="flex flex-col items-center justify-center w-1/2">
-          <h1 className="text-4xl sm:text-6xl font-bold">Hi, I'm Qi Wu!</h1>
-          <p className="text-xl sm:text-2xl mt-4">Welcome to my personal website.</p>
+        <div className="flex flex-col w-1/2 p-20">
+          <h1 className="text-4xl sm:text-6xl font-bold text-left text-[#3A4750] capriola-regular">Hi, I'm Qi Wu!</h1>
+          <p className="text-xl sm:text-2xl mt-4  text-left  text-[#3A4750] capriola-regular">
+            Welcome to my site! I’m Qi Wu, a UCSB Computer Science student passionate about building tech solutions. Check out my projects and feel free to connect!
+          </p>
+           {/* Button */}
+           <button className="mt-6 px-8 py-4 text-lg font-medium text-[#F5F374] bg-[#3A4750] rounded-tl-full rounded-br-full hover:bg-[#2E3B42] transition duration-300 ease-in-out">
+About Me
+</button>
+
+
         </div>
         
         {/* Subsection 2 */}
-        <div className="flex flex-col items-center justify-center w-1/2">
-        <Image 
-            src="/assets/background1.jpg" // Replace with your image path
+        <div className="flex flex-col items-center justify-center w-1/2 p-4 h-auto min-h-[600px]">
+          <Image 
+            src="/p1.jpg" // Ensure the image is located in your public directory
             alt="Profile Picture"
-            width={300} // Default width
-            height={300} // Default height
-            className="w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 object-cover rounded-full"
+            width={430} 
+            height={700}
+            className="object-cover"
           />
         </div>
       </section>
-
-      {/* Section 2: Photo and About Me */}
+ {/*
+    {/* Section 2: Photo and About Me */}
       <section className="flex flex-col sm:flex-row items-center justify-center h-screen gap-52 m-16">
         
         {/* Section 2.1: Photo and Tags */}
@@ -74,7 +82,191 @@ export default function Home() {
             </li>
           </ul>
         </div>
-      </section>
+      </section> 
+      */}
+
+      {/* Section 2: About and Picture */}
+<section className="flex flex-row items-center justify-center h-screen w-full gap-10 p-16">
+  
+  {/* Subsection 1 (3/5 Width) */}
+  <div className="flex flex-col w-3/5 gap-8 p-8">
+    <h2 className="text-3xl sm:text-5xl font-bold text-left text-[#3A4750] capriola-regular">
+      About Me
+    </h2>
+    <p className="text-lg sm:text-2xl text-left text-[#3A4750] capriola-regular">
+    I'm a third-year Computer Science student at UCSB, part of the Engineering Honor Program. I’m passionate about software development, AI technologies, and building tools that make a difference.
+    </p>
+    <ul className="mt-4 space-y-2 text-lg sm:text-xl">
+            <li className="underline text-[#3A4750] capriola-regular">Engineering Honor Program Student</li>
+            <li className="underline text-[#3A4750] capriola-regular">GPA: 3.9</li>
+          </ul>
+    
+    {/* Button */}
+    <button className="mt-6 px-8 py-4 text-lg font-medium text-[#F5F374] bg-[#3A4750] rounded-tl-full rounded-br-full hover:bg-[#2E3B42] transition duration-300 ease-in-out">
+      Learn More
+    </button>
+
+    {/* Image */}
+    <div className="mt-6">
+      <Image 
+        src="/114.jpg" // Replace with the actual image path
+        alt="Project Preview"
+        width={600}
+        height={200}
+        className="object-cover"
+      />
+    </div>
+  </div>
+
+  {/* Subsection 2 (2/5 Width) */}
+  <div className="flex flex-col w-2/5 items-center justify-center p-4">
+    <Image 
+      src="/110.jpg" // Replace with the actual image path
+      alt="Profile Picture"
+      width={400}
+      height={400}
+      className="object-cover"
+    />
+  </div>
+</section>
+
+<section className="bg-[#F4F3E8] py-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl sm:text-5xl font-bold text-center text-[#3A4750] mb-10">
+      My Experience
+    </h2>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      {/* Service 1: Basic */}
+      <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
+        <Image
+          src="/s2.png" // Replace with actual image path
+          alt="Basic Service"
+          width={244}
+          height={244}
+          className="rounded-lg object-cover"
+        />
+        <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">Tax Technology Intern</h3>
+        <p className="mt-2 text-lg text-[#3A4750]">EY Shanghai TAX | Shanghai</p>
+        <p className="mt-2 text-lg text-[#3A4750]">June 2024-August 2024</p>
+        <p className="mt-4 text-left text-gray-600">
+        🚀 Improved labeling with Logistic Regression. <br/>
+📈 Achieved 70% accuracy using TFIDF. <br/>
+💡 Integrated AI writing via OpenAI API and LangChain.
+
+</p>
+      </div>
+
+      {/* Service 2: Intermediate */}
+      <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
+        <Image
+          src="/ey1.png" // Replace with actual image path
+          alt="Intermediate Service"
+          width={244}
+          height={244}
+          className="rounded-lg object-cover"
+        />
+        <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">Tax Technology Intern</h3>
+        <p className="mt-2 text-lg text-[#3A4750]">EY Shanghai TAX | Shanghai</p>
+        <p className="mt-2 text-lg text-[#3A4750]">June 2023-September 2023</p>
+        <p className="mt-4 text-left text-gray-600">
+        🤖 Automated policy retrieval in 1 min using Python. <br/>
+📊 Analyzed texts with Claude/OpenAI APIs. <br/>
+🔍 Reduced manual work 50% using Elasticsearch. <br/>
+🗂️ Refined data for 1500 firms by 95%.
+
+</p>
+      </div>
+
+      {/* Service 3: Advanced */}
+      <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
+        <Image
+          src="/ersp1.png" // Replace with actual image path
+          alt="Advanced Service"
+          width={244}
+          height={244}
+          className="rounded-lg object-cover"
+        />
+        <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">Advanced Service</h3>
+        <p className="mt-2 text-lg text-[#3A4750]">$199</p>
+        <p className="mt-4 text-center text-gray-600">
+          Describe important details like price, value, length of service, and why it’s unique. Or use these sections to showcase different key values of your products or services.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section className="bg-[#F4F3E8] py-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl sm:text-5xl font-bold text-center text-[#3A4750] mb-10">
+      My Experience
+    </h2>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      {/* Service 1: Basic */}
+      <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
+        <Image
+          src="/s2.png" // Replace with actual image path
+          alt="Basic Service"
+          width={244}
+          height={244}
+          className="rounded-lg object-cover"
+        />
+        <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">Tax Technology Intern</h3>
+        <p className="mt-2 text-lg text-[#3A4750]">EY Shanghai TAX | Shanghai</p>
+        <p className="mt-2 text-lg text-[#3A4750]">June 2024-August 2024</p>
+        <p className="mt-4 text-left text-gray-600">
+        🚀 Improved labeling with Logistic Regression. <br/>
+📈 Achieved 70% accuracy using TFIDF. <br/>
+💡 Integrated AI writing via OpenAI API and LangChain.
+
+</p>
+      </div>
+
+      {/* Service 2: Intermediate */}
+      <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
+        <Image
+          src="/ey1.png" // Replace with actual image path
+          alt="Intermediate Service"
+          width={244}
+          height={244}
+          className="rounded-lg object-cover"
+        />
+        <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">Tax Technology Intern</h3>
+        <p className="mt-2 text-lg text-[#3A4750]">EY Shanghai TAX | Shanghai</p>
+        <p className="mt-2 text-lg text-[#3A4750]">June 2023-September 2023</p>
+        <p className="mt-4 text-left text-gray-600">
+        🤖 Automated policy retrieval in 1 min using Python. <br/>
+📊 Analyzed texts with Claude/OpenAI APIs. <br/>
+🔍 Reduced manual work 50% using Elasticsearch. <br/>
+🗂️ Refined data for 1500 firms by 95%.
+
+</p>
+      </div>
+
+      {/* Service 3: Advanced */}
+      <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
+        <Image
+          src="/ersp1.png" // Replace with actual image path
+          alt="Advanced Service"
+          width={244}
+          height={244}
+          className="rounded-lg object-cover"
+        />
+        <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">Advanced Service</h3>
+        <p className="mt-2 text-lg text-[#3A4750]">$199</p>
+        <p className="mt-4 text-center text-gray-600">
+          Describe important details like price, value, length of service, and why it’s unique. Or use these sections to showcase different key values of your products or services.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Section 3: Projects */}
       <section className="flex flex-col items-left justify-center gap-16 max-w-screen-md mx-auto">

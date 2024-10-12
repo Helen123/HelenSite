@@ -25,3 +25,14 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: 'Capriola';
+  src: url('/font/capriola-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.capriola-regular {
+  font-family: 'Capriola', sans-serif;
+}
