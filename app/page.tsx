@@ -157,13 +157,17 @@ export default function Home() {
         <p className="mt-2 text-lg text-[#3A4750]">Jasmine Echo Chinese Ensemble</p>
         <div className="flex items-center justify-center gap-4">
   <Image
-    src="rn11.png" // React Native icon URL
+    src="/rn11.png" // React Native icon URL
     alt="React Native" 
+    width={300}
+    height={300}
     className="w-20 h-20"
   /> 
   <Image 
     src="/firebase.webp" // Firebase icon URL
     alt="Firebase" 
+    width={300}
+    height={300}
     className="w-20 h-20"
   />
 </div>
@@ -189,13 +193,17 @@ export default function Home() {
         <p className="mt-2 text-lg text-[#3A4750]">Travel Planning APP</p>
         <div className="flex items-center justify-center gap-4">
   <Image 
-    src="rn11.png" // React Native icon URL
+    src="/rn11.png" // React Native icon URL
     alt="React Native" 
+    width={300}
+    height={300}
     className="w-20 h-20"
   /> 
   <Image 
     src="/firebase.webp" // Firebase icon URL
     alt="Firebase" 
+    width={400}
+    height={400}
     className="w-20 h-20"
   />
 </div>
