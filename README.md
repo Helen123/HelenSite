@@ -32,13 +32,13 @@ To run this project locally, clone this repository and install the dependencies.
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/Helen123/HelenSite.git
    ```
 
 2. Navigate into the project directory:
 
    ```bash
-   cd your-repo-name
+   cd HelenSite
    ```
 
 3. Install dependencies:
