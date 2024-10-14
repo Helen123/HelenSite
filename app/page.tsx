@@ -257,7 +257,7 @@ export default function Home() {
     <li>Researched Vision-language Models to enhance the Method of Loci memory technique.</li>
     <li>Collaborated with 3 undergraduates, 2 PhD mentors, and 1 professor.</li>
     <li>Developed and maintained a <strong>React-based </strong>web platform for over 50 participants.</li>
-    <li>Integrated OpenAI API to generate personalized text and images for "memory palaces."</li>
+    <li>Integrated OpenAI API to generate personalized text and images for &ldquo;memory palaces&ldquo;.</li>
     <li>Conducted 50+ experiments and automated processes, cutting time costs by 60%.</li>
   </ul>
 </li>
