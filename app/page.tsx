@@ -48,7 +48,7 @@ export default function Home() {
         
         {/* Subsection 1 */}
         <div className="flex flex-col w-full p-20">
-          <h1 className="text-4xl sm:text-6xl font-bold text-left text-[#3A4750] capriola-regular">Hi, I'm Helen Wu!</h1>
+          <h1 className="text-4xl sm:text-6xl font-bold text-left text-[#3A4750] capriola-regular">Hi, I&#39;m Helen Wu!</h1>
           <p className="text-xl sm:text-2xl mt-4  text-left  text-[#3A4750] capriola-regular">
             Welcome to my site! I’m Helen Wu, a UCSB Computer Science student passionate about building tech solutions. Check out my projects and feel free to connect!
           </p>
@@ -93,7 +93,7 @@ export default function Home() {
       About Me
     </h2>
     <p className="text-lg sm:text-2xl text-left text-[#3A4750] ">
-      I'm a third-year Computer Science student at UCSB, part of the Engineering Honor Program. I’m passionate about software development, AI technologies, and building tools that make a difference.
+      I&#39;m a third-year Computer Science student at UCSB, part of the Engineering Honor Program. I&#39;m passionate about software development, AI technologies, and building tools that make a difference.
     </p>
     <ul className="mt-4 space-y-2 text-lg sm:text-xl">
       <li className="underline text-[#3A4750] ">Engineering Honor Program Student</li>
@@ -270,7 +270,7 @@ export default function Home() {
   <div className="w-full sm:w-1/2 mb-8 sm:mb-0 p-8">
     <h2 className="text-4xl sm:text-5xl font-semibold text-left text-[#7F9FEB] capriola-regular">Contact me</h2>
     <p className="mt-6 text-xl text-left text-[#3A4750]">
-    Interested in collaborating? Fill out the form below, and I'll get back to you as soon as possible. Looking forward to connecting with you!
+    Interested in collaborating? Fill out the form below, and I&#39;ll get back to you as soon as possible. Looking forward to connecting with you!
     </p>
   </div>
 
@@ -346,7 +346,7 @@ export default function Home() {
 {/* Footer Section */}
 <footer className="flex flex-col sm:flex-row justify-between items-start mx-auto py-12 w-full p-8">
   <div className="w-full mb-8 sm:mb-0 p-8">
-    <h2 className="text-4xl sm:text-5xl font-semibold text-left text-[#7F9FEB] capriola-regular">Helen Wu's site</h2>
+    <h2 className="text-4xl sm:text-5xl font-semibold text-left text-[#7F9FEB] capriola-regular">Helen Wu&#39;s site</h2>
   </div>
 
   <div className="flex w-full sm:w-3/4 mx-auto">
