@@ -1,6 +1,6 @@
 # Helen Wu's Personal Portfolio
 
-Welcome to Helen Wu's personal portfolio website, built using **Next.js**. This website showcases Helen's projects, experience, and provides a way to get in touch.
+Welcome to Helen Wu's personal portfolio website, built using Next.js. This website showcases Helen's projects, experience, and provides a way to get in touch.
 
 ## Table of Contents
 
