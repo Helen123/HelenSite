@@ -1,6 +1,45 @@
+"use client"; // This makes the component a Client Component
 import Image from "next/image";
+import emailjs from 'emailjs-com';
+import { useState } from 'react';
+
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // EmailJS configuration (Replace with your actual EmailJS values)
+    const serviceId = 'service_imsn5g8';
+    const templateId = 'template_xc8extd';
+    const userId = 'mz06gmbNS7u73Z44H'; // EmailJS user id
+
+    emailjs
+      .send(serviceId, templateId, formData, userId)
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Message sent successfully!');
+        },
+        (error) => {
+          console.log('FAILED...', error);
+          alert('Failed to send the message. Please try again later.');
+        }
+      );
+  };
   return (
     <div className="min-h-screen flex flex-col items-center gap-16 font-capriola-regular" style={{ backgroundColor: '#F4F3E8' }}>
       
@@ -9,14 +48,24 @@ export default function Home() {
         
         {/* Subsection 1 */}
         <div className="flex flex-col w-full p-20">
-          <h1 className="text-4xl sm:text-6xl font-bold text-left text-[#3A4750] capriola-regular">Hi, I'm Qi Wu!</h1>
+          <h1 className="text-4xl sm:text-6xl font-bold text-left text-[#3A4750] capriola-regular">Hi, I'm Helen Wu!</h1>
           <p className="text-xl sm:text-2xl mt-4  text-left  text-[#3A4750] capriola-regular">
-            Welcome to my site! I’m Qi Wu, a UCSB Computer Science student passionate about building tech solutions. Check out my projects and feel free to connect!
+            Welcome to my site! I’m Helen Wu, a UCSB Computer Science student passionate about building tech solutions. Check out my projects and feel free to connect!
           </p>
            {/* Button */}
-           <button className="mt-6 px-8 py-4 text-lg font-medium text-[#F5F374] bg-[#3A4750] rounded-tl-full rounded-br-full hover:bg-[#2E3B42] transition duration-300 ease-in-out">
-About Me
-</button>
+          
+           <button
+      onClick={() => {
+        const aboutSection = document.getElementById('about-me');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }}
+      className="mt-6 px-8 py-4 text-lg font-medium text-[#F5F374] bg-[#3A4750] rounded-tl-full rounded-br-full hover:bg-[#2E3B42] transition duration-300 ease-in-out"
+    >
+      About Me
+    </button>
+
 
 
         </div>
@@ -36,23 +85,29 @@ About Me
 
 
 {/* Section 2: About and Picture */}
-<section className="flex flex-col sm:flex-row items-center justify-center min-h-screen sm:h-auto w-full gap-10 p-16">
+<section  id="about-me" className="flex flex-col sm:flex-row items-center justify-center min-h-screen sm:h-auto w-full gap-10 p-16">
   
   {/* Subsection 1 (Full width on small screens, 3/5 on large screens) */}
   <div className="flex flex-col w-full  gap-8 p-8">
-    <h2 className="text-3xl sm:text-5xl font-bold text-left text-[#3A4750] capriola-regular">
+    <h2 className="text-3xl sm:text-5xl font-bold text-left text-[#7F9FEB] capriola-regular">
       About Me
     </h2>
-    <p className="text-lg sm:text-2xl text-left text-[#3A4750] capriola-regular">
+    <p className="text-lg sm:text-2xl text-left text-[#3A4750] ">
       I'm a third-year Computer Science student at UCSB, part of the Engineering Honor Program. I’m passionate about software development, AI technologies, and building tools that make a difference.
     </p>
     <ul className="mt-4 space-y-2 text-lg sm:text-xl">
-      <li className="underline text-[#3A4750] capriola-regular">Engineering Honor Program Student</li>
-      <li className="underline text-[#3A4750] capriola-regular">GPA: 3.9</li>
+      <li className="underline text-[#3A4750] ">Engineering Honor Program Student</li>
+      <li className="underline text-[#3A4750] ">GPA: 3.9</li>
     </ul>
     
     {/* Button */}
-    <button className="mt-6 px-8 py-4 text-lg font-medium text-[#F5F374] bg-[#3A4750] rounded-tl-full rounded-br-full hover:bg-[#2E3B42] transition duration-300 ease-in-out">
+    <button
+      onClick={() => {
+        const aboutSection = document.getElementById('projects');
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }} className="mt-6 px-8 py-4 text-lg font-medium text-[#F4F3E8] bg-[#3A4750] rounded-tl-full rounded-br-full hover:bg-[#2E3B42] transition duration-300 ease-in-out">
       Learn More
     </button>
 
@@ -81,13 +136,13 @@ About Me
 </section>
 
 {/* Section: Projects */}
-<section className="bg-[#F4F3E8] py-12">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-3xl sm:text-5xl font-bold text-center text-[#3A4750] mb-10">
+<section  id="projects" className="bg-[#F4F3E8] py-12">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 " >
+    <h2 className="text-3xl sm:text-5xl font-bold text-center mb-10  text-[#7F9FEB] capriola-regular">
       My Project
     </h2>
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-[#3A4750] capriola-regular">
       
       {/* project 1: */}
       <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
@@ -101,12 +156,12 @@ About Me
         <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">HuaHarmony</h3>
         <p className="mt-2 text-lg text-[#3A4750]">Jasmine Echo Chinese Ensemble</p>
         <div className="flex items-center justify-center gap-4">
-  <img 
+  <Image
     src="rn11.png" // React Native icon URL
     alt="React Native" 
     className="w-20 h-20"
   /> 
-  <img 
+  <Image 
     src="/firebase.webp" // Firebase icon URL
     alt="Firebase" 
     className="w-20 h-20"
@@ -133,12 +188,12 @@ About Me
         <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">WanderWay</h3>
         <p className="mt-2 text-lg text-[#3A4750]">Travel Planning APP</p>
         <div className="flex items-center justify-center gap-4">
-  <img 
+  <Image 
     src="rn11.png" // React Native icon URL
     alt="React Native" 
     className="w-20 h-20"
   /> 
-  <img 
+  <Image 
     src="/firebase.webp" // Firebase icon URL
     alt="Firebase" 
     className="w-20 h-20"
@@ -159,183 +214,186 @@ About Me
     </div>
   </div>
 </section>
-<section className="bg-[#F4F3E8] py-12">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-3xl sm:text-5xl font-bold text-center text-[#3A4750] mb-10">
-      My Experience
-    </h2>
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      
-      {/* Service 1: Basic */}
-      <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
-        <Image
-          src="/s2.png" // Replace with actual image path
-          alt="Basic Service"
-          width={244}
-          height={244}
-          className="rounded-lg object-cover"
-        />
-        <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">Tax Technology Intern</h3>
-        <p className="mt-2 text-lg text-[#3A4750]">EY Shanghai TAX | Shanghai</p>
-        <p className="mt-2 text-lg text-[#3A4750]">June 2024-August 2024</p>
-        <p className="mt-4 text-left text-gray-600">
-        🚀 Improved labeling with Logistic Regression. <br/>
-📈 Achieved 70% accuracy using TFIDF. <br/>
-💡 Integrated AI writing via OpenAI API and LangChain.
 
-</p>
-      </div>
 
-      {/* Service 2: Intermediate */}
-      <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
-        <Image
-          src="/ey1.png" // Replace with actual image path
-          alt="Intermediate Service"
-          width={244}
-          height={244}
-          className="rounded-lg object-cover"
-        />
-        <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">Tax Technology Intern</h3>
-        <p className="mt-2 text-lg text-[#3A4750]">EY Shanghai TAX | Shanghai</p>
-        <p className="mt-2 text-lg text-[#3A4750]">June 2023-September 2023</p>
-        <p className="mt-4 text-left text-gray-600">
-        🤖 Automated policy retrieval in 1 min using Python. <br/>
-📊 Analyzed texts with Claude/OpenAI APIs. <br/>
-🔍 Reduced manual work 50% using Elasticsearch. <br/>
-🗂️ Refined data for 1500 firms by 95%.
 
-</p>
-      </div>
 
-      {/* Service 3: Advanced */}
-      <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
-        <Image
-          src="/ersp1.png" // Replace with actual image path
-          alt="Advanced Service"
-          width={244}
-          height={244}
-          className="rounded-lg object-cover"
-        />
-        <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">Advanced Service</h3>
-        <p className="mt-2 text-lg text-[#3A4750]">$199</p>
-        <p className="mt-4 text-center text-gray-600">
-          Describe important details like price, value, length of service, and why it’s unique. Or use these sections to showcase different key values of your products or services.
-        </p>
-      </div>
+{/* Section 4: Experience */}
+<section id ="experiences"className="flex flex-col items-left justify-center gap-20 max-w-screen-lg mx-auto text-[#3A4750] p-8">
+  <div>
+    <h2 className="text-4xl sm:text-5xl font-semibold text-left text-[#7F9FEB] capriola-regular">Experience</h2>
+    <ul className="mt-10 text-xl sm:text-2xl ">
 
-    </div>
+{/* Experience 1: Tax Technology Intern */}
+<li className="mb-12 p-8 border-2 rounded-xl shadow-2xl bg-white max-w-screen-lg mx-auto">
+  <h3 className="text-3xl font-bold text-left">Tax Technology Intern (Full-time) - EY</h3>
+  <p className="text-xl mt-6 font-semibold">June 2024 - August 2024 | 40 hrs/week</p>
+  <ul className="list-disc pl-6 mt-4">
+    <li>Improved labeling deadlines and subsidy amounts using <strong>Logistic Regression</strong>.</li>
+    <li>Automated policy analysis, reducing speed per item from 45s to 0.05s with 0.1% error rate.</li>
+    <li>Achieved <strong>70%</strong> accuracy with Logistic Regression and TFIDF models.</li>
+    <li>Enhanced prompt engineering, achieving 98% accuracy in label extraction.</li>
+    <li>Added AI-assisted writing and policy summaries using OpenAI API and <strong>LangChain.</strong></li>
+  </ul>
+
+  <p className="text-xl mt-8 font-semibold">June 2023 - September 2023 | 40 hrs/week</p>
+  <ul className="list-disc pl-6 mt-4">
+    <li>Automated policy retrieval, cutting analysis time to 1 minute per policy.</li>
+    <li>Extracted policy data using Python libraries and AI prompts via Claude/OpenAI.</li>
+    <li>Reduced manual work by 50% with <strong>Elasticsearch </strong>and automated essay drafting.</li>
+    <li>Scraped and tagged data for 1500 firms, eliminating 95% irrelevant content.</li>
+    <li>Gathered up-to-date company info with RPA and Perplexity queries.</li>
+  </ul>
+</li>
+
+
+
+{/* Experience 2: Researcher at UCSB */}
+<li className="mb-12 p-8 border-2 rounded-xl shadow-2xl bg-white max-w-screen-lg mx-auto">
+  <h3 className="text-3xl font-bold text-left">Student Researcher - Early Research Scholars Program (ERSP)</h3>
+  <p className="text-xl mt-6 font-semibold">September 2023 - Present | 8 hrs/week</p>
+  <ul className="list-disc pl-6 mt-4">
+    <li>Researched Vision-language Models to enhance the Method of Loci memory technique.</li>
+    <li>Collaborated with 3 undergraduates, 2 PhD mentors, and 1 professor.</li>
+    <li>Developed and maintained a <strong>React-based </strong>web platform for over 50 participants.</li>
+    <li>Integrated OpenAI API to generate personalized text and images for "memory palaces."</li>
+    <li>Conducted 50+ experiments and automated processes, cutting time costs by 60%.</li>
+  </ul>
+</li>
+
+    </ul>
   </div>
 </section>
+{/* Section 5: Contact Us */}
+<section id ="contact"className="flex flex-col sm:flex-row justify-between items-start max-w-screen-lg mx-auto py-12 ">
+  <div className="w-full sm:w-1/2 mb-8 sm:mb-0 p-8">
+    <h2 className="text-4xl sm:text-5xl font-semibold text-left text-[#7F9FEB] capriola-regular">Contact me</h2>
+    <p className="mt-6 text-xl text-left text-[#3A4750]">
+    Interested in collaborating? Fill out the form below, and I'll get back to you as soon as possible. Looking forward to connecting with you!
+    </p>
+  </div>
 
-
-      {/* Section 3: Projects */}
-     <section className="flex flex-col items-left justify-center gap-16 max-w-screen-lg mx-auto">
-        <div>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-left">Projects</h2>
-          <ul className="mt-8 text-lg sm:text-xl">
-
-            {/* Project 1: Traditional Chinese Orchestra Sharing Platform */}
-             <li className="mb-8 p-6 border rounded-lg shadow-lg bg-white max-w-screen-md mx-auto">
-              <h3 className="text-2xl font-bold text-left">Orchestra Sharing Platform</h3>
-              <div className="flex flex-col sm:flex-row items-center gap-8 mt-6">
-                <div className="w-auto flex-shrink-0">
-                  <Image
-                    src="/favicon.ico" // Replace with actual photo path
-                    alt="Orchestra Project"
-                    width={200}
-                    height={200}
-                    className="rounded-lg"
-                  />
-                </div>
-                <div>
-                  <p className="text-lg">
-                    Developed a React Native mobile app for the traditional Chinese orchestra community to exchange music sheets, view performance videos, and connect with each other.
-                  </p>
-                </div>
-              </div>
-              <div className="mt-6 flex gap-8 justify-center">
-                <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                  {/* GitHub Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                    {/* SVG Path */}
-                  </svg>
-                </a>
-                <a href="https://your-live-demo.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                  {/* Live Demo Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                    {/* SVG Path */}
-                  </svg>
-                </a>
-              </div>
-            </li>
-
-            {/* Project 2: Travel Planning App */}
-            <li className="mb-8 p-6 border rounded-lg shadow-lg bg-white max-w-screen-sm mx-auto">
-              <h3 className="text-2xl font-bold text-left">Travel Planning App</h3>
-              <div className="flex flex-col sm:flex-row items-center gap-8 mt-6">
-                <div className="w-auto flex-shrink-0">
-                  <Image
-                    src="/favicon.ico" // Replace with actual photo path
-                    alt="Travel Planning Project"
-                    width={200}
-                    height={200}
-                    className="rounded-lg"
-                  />
-                </div>
-                <div>
-                  <p className="text-lg">
-                    Created a React Native app allowing users to share travel experiences and plan trips based on others' posts. Used Firebase for backend services and Redux for state management.
-                  </p>
-                </div>
-              </div>
-              <div className="mt-6 flex gap-8 justify-center">
-                <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                  {/* GitHub Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                    {/* SVG Path */}
-                  </svg>
-                </a>
-                <a href="https://your-live-demo.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
-                  {/* Live Demo Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
-                    {/* SVG Path */}
-                  </svg>
-                </a>
-              </div>
-            </li>
-
-            {/* Add more projects here */}
-          </ul>
+  <form className="w-full sm:w-1/2 space-y-6 p-8" onSubmit={handleSubmit}>
+        <div className="flex space-x-4">
+          <div className="flex-1">
+            <label className="block text-lg font-semibold" htmlFor="first-name">
+              First Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="first-name"
+              name="firstName"
+              className="w-full p-4 border rounded-lg focus:outline-none"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label className="block text-lg font-semibold" htmlFor="last-name">
+              Last Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="last-name"
+              name="lastName"
+              className="w-full p-4 border rounded-lg focus:outline-none"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+            />
+          </div>
         </div>
-      </section>
 
-      {/* Section 4: Experience */}
-      <section className="flex flex-col items-left justify-center gap-16 max-w-screen-lg mx-auto">
         <div>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-left">Experience</h2>
-          <ul className="mt-8 text-lg sm:text-xl">
-
-            {/* Experience 1: Tax Technology Intern */}
-            <li className="mb-8 p-6 border rounded-lg shadow-lg bg-white max-w-screen-md mx-auto">
-              <h3 className="text-2xl font-bold text-left">Tax Technology Intern - EY Shanghai</h3>
-              <p className="text-lg mt-4">
-                Developed and optimized automated policy analysis tools using Python and scikit-learn, reducing analysis time significantly and enhancing system stability.
-              </p>
-            </li>
-
-            {/* Experience 2: Researcher at UCSB */}
-            <li className="mb-8 p-6 border rounded-lg shadow-lg bg-white max-w-screen-md mx-auto">
-              <h3 className="text-2xl font-bold text-left">Researcher - Early Research Scholars Program</h3>
-              <p className="text-lg mt-4">
-                Engaged in a study to evaluate Vision-language Models, developed a React-based web platform for experimental data collection, and integrated AI technology to support cognitive research.
-              </p>
-            </li>
-
-            {/* Add more experiences here */}
-          </ul>
+          <label className="block text-lg font-semibold" htmlFor="email">
+            Email <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="w-full p-4 border rounded-lg focus:outline-none"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
         </div>
-      </section>
+
+        <div>
+          <label className="block text-lg font-semibold" htmlFor="message">
+            Message <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            className="w-full p-4 border rounded-lg focus:outline-none h-32"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full p-4 bg-[#3B496B] text-white text-xl font-bold hover:bg-[#293a56] transition duration-300 bg-[#3A4750] rounded-tl-full rounded-br-full ease-in-out"
+        >
+          SEND
+        </button>
+      </form>
+</section>
+{/* Footer Section */}
+<footer className="flex flex-col sm:flex-row justify-between items-start mx-auto py-12 w-full p-8">
+  <div className="w-full mb-8 sm:mb-0 p-8">
+    <h2 className="text-4xl sm:text-5xl font-semibold text-left text-[#7F9FEB] capriola-regular">Helen Wu's site</h2>
+  </div>
+
+  <div className="flex w-full sm:w-3/4 mx-auto">
+  <div className="w-1/2 mb-8 sm:mb-0 p-8">
+    <h3 className="text-xl font-semibold text-left text-[#3A4750]">Explore</h3>
+    <ul className="mt-4 space-y-2">
+      <li><a href="#about-me" className="text-[#3A4750] hover:underline">About me</a></li>
+      <li><a href="#projects" className="text-[#3A4750] hover:underline">Projects</a></li>
+      <li><a href="#experiences" className="text-[#3A4750] hover:underline">Experiences</a></li>
+      <li><a href="#contact" className="text-[#3A4750] hover:underline">Contact</a></li>
+    </ul>
+  </div>
+  <div className="w-1/2 p-8">
+  <h3 className="text-xl font-semibold text-left text-[#3A4750]">Follow me</h3>
+  <ul className="mt-4 space-y-2">
+    <li>
+      <p className="text-[#3A4750]">Email: <a href="mailto:qwu132@ucsb.edu" className="hover:underline">qwu132@ucsb.edu</a></p>
+    </li>
+    <li>
+      <a
+        href="https://www.linkedin.com/in/qi-wu-22a448221/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#3A4750] hover:underline"
+      >
+        LinkedIn
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://github.com/Helen123"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#3A4750] hover:underline"
+      >
+        GitHub
+      </a>
+    </li>
+  </ul>
+</div>
+
+  </div>
+</footer>
+
+
+
+
     </div>
   );
 }
