@@ -32,7 +32,7 @@ export default function Home() {
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
-          alert('Message sent successfully!');
+          alert('Message send successfully!');
         },
         (error) => {
           console.log('FAILED...', error);
