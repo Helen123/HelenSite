@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Helen Wu's Personal Portfolio
 
-## Getting Started
+Welcome to Helen Wu's personal portfolio website, built using **Next.js**. This website showcases Helen's projects, experience, and provides a way to get in touch.
 
-First, run the development server:
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Running Locally](#running-locally)
+- [Deploying](#deploying)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Contact](#contact)
+
+## Introduction
+
+This project is a portfolio website built using **Next.js**, showcasing personal projects, experiences, and a contact form that allows visitors to get in touch. It features optimized images using `next/image`, a responsive layout, and automatic deployment via **Vercel**.
+
+## Technologies
+
+- **Next.js**: React-based framework for static site generation and server-side rendering.
+- **React**: UI library for building interactive user interfaces.
+- **TypeScript**: Superset of JavaScript providing static typing.
+- **EmailJS**: Used for sending emails from the contact form.
+- **Vercel**: Hosting platform for seamless deployment and integration with GitHub.
+
+## Installation
+
+To run this project locally, clone this repository and install the dependencies.
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/Helen123/HelenSite.git
+   ```
+
+2. Navigate into the project directory:
+
+   ```bash
+   cd HelenSite
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Running Locally
+
+To run the project locally in development mode:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site will be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploying
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is deployed automatically through **Vercel**. Follow these steps to deploy your own version:
 
-## Learn More
+1. Push your code to a GitHub repository.
+2. Go to [Vercel](https://vercel.com/).
+3. Import your GitHub repository into Vercel.
+4. Follow the on-screen instructions to deploy.
 
-To learn more about Next.js, take a look at the following resources:
+Vercel will automatically rebuild and deploy the website every time you push new code to the GitHub repository.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Optimized Images**: Using `next/image` for optimized image loading.
+- **Responsive Design**: The layout adapts to different screen sizes.
+- **Email Integration**: Contact form integrated with EmailJS to send inquiries directly to the website owner.
+- **SEO-friendly**: The website includes meta tags for better search engine optimization.
+- **Automatic Deployment**: Hosted on Vercel, with automatic deployment from GitHub.
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Here’s an overview of the main project structure:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+/public          - Contains static assets (images, icons, etc.)
+/components      - Reusable components for the project
+/pages           - Next.js pages
+    /index.tsx   - Main homepage
+    /about.tsx   - About me section
+    /projects.tsx - Projects page
+/styles          - CSS styles
+/layout.tsx      - Global layout component
+/globals.css     - Global CSS
+```
+
+## ESLint and Optimization
+
+- The project is configured with ESLint to ensure code quality.
+- All images are optimized using Next.js’s `next/image` for faster load times and improved performance.
+
+
+
+## Contact
+
+Feel free to reach out if you have any questions or want to collaborate!
+
+- **Email**: qwu132@ucsb.edu
+- **LinkedIn**: [linkedin.com/in/qi-wu-22a448221](https://www.linkedin.com/in/qi-wu-22a448221/)
+- **GitHub**: [github.com/Helen123](https://github.com/Helen123)
+
+---
+
+Thank you for visiting!
