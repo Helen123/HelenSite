@@ -282,7 +282,7 @@ export default function Home() {
     </p>
   </div>
 
-  <form className="w-full sm:w-1/2 space-y-6 p-8" onSubmit={handleSubmit}>
+  <form className="w-full sm:w-1/2 space-y-6 text-[#3A4750] p-8" onSubmit={handleSubmit}>
         <div className="flex space-x-4">
           <div className="flex-1">
             <label className="block text-lg font-semibold" htmlFor="first-name">
