@@ -93,7 +93,7 @@ export default function Home() {
       About Me
     </h2>
     <p className="text-lg sm:text-2xl text-left text-[#3A4750] ">
-      I&#39;m a third-year Computer Science student at UCSB, part of the Engineering Honor Program. I&#39;m passionate about software development, AI technologies, and building tools that make a difference.
+      I&#39;m a fourth-year Computer Science student at UCSB, part of the Engineering Honor Program. I&#39;m passionate about software development, AI technologies, and building tools that make a difference.
     </p>
     <ul className="mt-4 space-y-2 text-lg sm:text-xl">
       <li className="underline text-[#3A4750] ">Engineering Honor Program Student</li>
