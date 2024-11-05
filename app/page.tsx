@@ -23,9 +23,9 @@ export default function Home() {
     e.preventDefault();
 
     // EmailJS configuration (Replace with your actual EmailJS values)
-    const serviceId = 'service_imsn5g8';
-    const templateId = 'template_xc8extd';
-    const userId = 'mz06gmbNS7u73Z44H'; // EmailJS user id
+    const serviceId = 'service_';
+    const templateId = 'template_';
+    const userId = 'mz0'; // EmailJS user id
 
     emailjs
       .send(serviceId, templateId, formData, userId)
