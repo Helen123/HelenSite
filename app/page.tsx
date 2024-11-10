@@ -319,8 +319,8 @@ export default function Home() {
               <p className="mt-4 text-left text-gray-600">
                 🍳 <strong>Remi</strong> is a social media app designed for food
                 enthusiasts to share and discover recipes. <br />
-                🥗 Users can post their own recipes, react to friends' cooking,
-                and bookmark favorites for later. <br />
+                🥗 Users can post their own recipes, react to friends&apos;
+                cooking, and bookmark favorites for later. <br />
                 📲 Built using <strong>React Native</strong> and{" "}
                 <strong>Expo Go</strong> to ensure cross-platform support and a
                 seamless user experience. <br />
