@@ -286,6 +286,65 @@ export default function Home() {
                 <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
             </div>
+            <div className="flex flex-col items-center rounded-lg shadow-lg p-6">
+              <Image
+                src="/remi.png" // Replace with actual image path
+                alt="Remi App"
+                width={244}
+                height={244}
+                className="rounded-lg object-cover"
+              />
+              <h3 className="mt-6 text-2xl font-semibold text-[#3A4750]">
+                Remi - Recipe Sharing App
+              </h3>
+              <p className="mt-2 text-lg text-[#3A4750]">
+                Social Media for Food Lovers
+              </p>
+              <div className="flex items-center justify-center gap-4">
+                <Image
+                  src="/rn11.png" // React Native icon URL
+                  alt="React Native"
+                  width={300}
+                  height={300}
+                  className="w-20 h-20"
+                />
+                <Image
+                  src="/firebase.webp" // Expo Go icon URL
+                  alt="firebase"
+                  width={200}
+                  height={200}
+                  className="w-20 h-20"
+                />
+              </div>
+              <p className="mt-4 text-left text-gray-600">
+                🍳 <strong>Remi</strong> is a social media app designed for food
+                enthusiasts to share and discover recipes. <br />
+                🥗 Users can post their own recipes, react to friends' cooking,
+                and bookmark favorites for later. <br />
+                📲 Built using <strong>React Native</strong> and{" "}
+                <strong>Expo Go</strong> to ensure cross-platform support and a
+                seamless user experience. <br />
+                🔒 Supports both authenticated users who can post, follow
+                others, and access private recipes, and unauthenticated users
+                who can explore public content.
+              </p>
+              <div className="flex items-center justify-center gap-4 mt-4">
+                <a
+                  href="https://github.com/ucsb-cs184-f24/team12-remi" // Replace with actual GitHub link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 text-gray-600 hover:text-gray-800">
+                  <FontAwesomeIcon icon={faGithub} size="2x" />
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=6gizIUNXe_g"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 text-gray-600 hover:text-gray-800">
+                  <FontAwesomeIcon icon={faPlayCircle} size="2x" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
