@@ -57,7 +57,7 @@ export default function Home() {
             Hi, I&#39;m Helen Wu!
           </h1>
           <p className="text-xl sm:text-2xl mt-4  text-left  text-[#3A4750] capriola-regular">
-            Welcome to my site! I’m Helen Wu, a UCSB Computer Science student
+            Welcome to my site! I&apos;m Helen Wu, a UCSB Computer Science student
             passionate about building tech solutions. Check out my projects and
             feel free to connect!
           </p>
@@ -142,6 +142,138 @@ export default function Home() {
             height={400}
             className="object-cover rounded-lg"
           />
+        </div>
+      </section>
+
+      {/* Section: Experience */}
+      <section
+        id="experiences"
+        className="flex flex-col items-left justify-center gap-20 max-w-screen-lg mx-auto text-[#3A4750] p-8">
+        <div>
+          <h2 className="text-4xl sm:text-5xl font-semibold text-left text-[#7F9FEB] capriola-regular">
+            Experience
+          </h2>
+          <ul className="mt-10 text-xl sm:text-2xl ">
+            {/* Experience 1: API Developer Intern */}
+            <li className="mb-12 p-8 border-2 rounded-xl shadow-2xl bg-white max-w-screen-lg mx-auto">
+              <h3 className="text-3xl font-bold text-left">
+                API Developer Intern (Part-time) - <a href="https://www.eventstaffapp.com/" target="_blank" rel="noopener noreferrer" className="text-[#7F9FEB] hover:underline">EventStaffApp (ESA)</a>
+              </h3>
+              <p className="text-xl mt-6 font-semibold">
+                January 2025 - Present | 10-15 hrs/week | Goleta
+              </p>
+              <ul className="list-disc pl-6 mt-4">
+                <li>
+                  Initiated and led a Laravel PHP API project enabling clients to manage staff info and send notifications.
+                </li>
+                <li>
+                  Designed and implemented RESTful API endpoints and integrated MySQL for data persistence.
+                </li>
+                <li>
+                  Secured authentication and token management using Laravel Sanctum.
+                </li>
+                <li>
+                  Wrote PHPUnit feature tests to ensure endpoint stability and correctness.
+                </li>
+                <li>
+                  Managed version control with Git/GitHub; used GitHub Actions for CI and Jira for sprint planning.
+                </li>
+                <li>
+                  Leveraged tools like Sequel Ace, Cursor, and Laravel Herd for efficient local and remote development.
+                </li>
+              </ul>
+            </li>
+
+            {/* Experience 2: Tax Technology Intern */}
+            <li className="mb-12 p-8 border-2 rounded-xl shadow-2xl bg-white max-w-screen-lg mx-auto">
+              <h3 className="text-3xl font-bold text-left">
+                Tax Technology Intern (Full-time) - EY
+              </h3>
+              <p className="text-xl mt-6 font-semibold">
+                June 2024 - August 2024 | 40 hrs/week
+              </p>
+              <ul className="list-disc pl-6 mt-4">
+                <li>
+                  Improved labeling deadlines and subsidy amounts using{" "}
+                  <strong>Logistic Regression</strong>.
+                </li>
+                <li>
+                  Automated policy analysis, reducing speed per item from 45s to
+                  0.05s with 0.1% error rate.
+                </li>
+                <li>
+                  Achieved <strong>70%</strong> accuracy with Logistic
+                  Regression and TFIDF models.
+                </li>
+                <li>
+                  Enhanced prompt engineering, achieving 98% accuracy in label
+                  extraction.
+                </li>
+                <li>
+                  Added AI-assisted writing and policy summaries using OpenAI
+                  API and <strong>LangChain.</strong>
+                </li>
+              </ul>
+
+              <p className="text-xl mt-8 font-semibold">
+                June 2023 - September 2023 | 40 hrs/week
+              </p>
+              <ul className="list-disc pl-6 mt-4">
+                <li>
+                  Automated policy retrieval, cutting analysis time to 1 minute
+                  per policy.
+                </li>
+                <li>
+                  Extracted policy data using Python libraries and AI prompts
+                  via Claude/OpenAI.
+                </li>
+                <li>
+                  Reduced manual work by 50% with{" "}
+                  <strong>Elasticsearch </strong>and automated essay drafting.
+                </li>
+                <li>
+                  Scraped and tagged data for 1500 firms, eliminating 95%
+                  irrelevant content.
+                </li>
+                <li>
+                  Gathered up-to-date company info with RPA and Perplexity
+                  queries.
+                </li>
+              </ul>
+            </li>
+
+            {/* Experience 3: Researcher at UCSB */}
+            <li className="mb-12 p-8 border-2 rounded-xl shadow-2xl bg-white max-w-screen-lg mx-auto">
+              <h3 className="text-3xl font-bold text-left">
+                Student Researcher - Early Research Scholars Program (ERSP)
+              </h3>
+              <p className="text-xl mt-6 font-semibold">
+                September 2023 - Present | 8 hrs/week
+              </p>
+              <ul className="list-disc pl-6 mt-4">
+                <li>
+                  Researched Vision-language Models to enhance the Method of
+                  Loci memory technique.
+                </li>
+                <li>
+                  Collaborated with 3 undergraduates, 2 PhD mentors, and 1
+                  professor.
+                </li>
+                <li>
+                  Developed and maintained a <strong>React-based </strong>web
+                  platform for over 50 participants.
+                </li>
+                <li>
+                  Integrated OpenAI API to generate personalized text and images
+                  for &ldquo;memory palaces&ldquo;.
+                </li>
+                <li>
+                  Conducted 50+ experiments and automated processes, cutting
+                  time costs by 60%.
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -349,107 +481,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 4: Experience */}
-      <section
-        id="experiences"
-        className="flex flex-col items-left justify-center gap-20 max-w-screen-lg mx-auto text-[#3A4750] p-8">
-        <div>
-          <h2 className="text-4xl sm:text-5xl font-semibold text-left text-[#7F9FEB] capriola-regular">
-            Experience
-          </h2>
-          <ul className="mt-10 text-xl sm:text-2xl ">
-            {/* Experience 1: Tax Technology Intern */}
-            <li className="mb-12 p-8 border-2 rounded-xl shadow-2xl bg-white max-w-screen-lg mx-auto">
-              <h3 className="text-3xl font-bold text-left">
-                Tax Technology Intern (Full-time) - EY
-              </h3>
-              <p className="text-xl mt-6 font-semibold">
-                June 2024 - August 2024 | 40 hrs/week
-              </p>
-              <ul className="list-disc pl-6 mt-4">
-                <li>
-                  Improved labeling deadlines and subsidy amounts using{" "}
-                  <strong>Logistic Regression</strong>.
-                </li>
-                <li>
-                  Automated policy analysis, reducing speed per item from 45s to
-                  0.05s with 0.1% error rate.
-                </li>
-                <li>
-                  Achieved <strong>70%</strong> accuracy with Logistic
-                  Regression and TFIDF models.
-                </li>
-                <li>
-                  Enhanced prompt engineering, achieving 98% accuracy in label
-                  extraction.
-                </li>
-                <li>
-                  Added AI-assisted writing and policy summaries using OpenAI
-                  API and <strong>LangChain.</strong>
-                </li>
-              </ul>
-
-              <p className="text-xl mt-8 font-semibold">
-                June 2023 - September 2023 | 40 hrs/week
-              </p>
-              <ul className="list-disc pl-6 mt-4">
-                <li>
-                  Automated policy retrieval, cutting analysis time to 1 minute
-                  per policy.
-                </li>
-                <li>
-                  Extracted policy data using Python libraries and AI prompts
-                  via Claude/OpenAI.
-                </li>
-                <li>
-                  Reduced manual work by 50% with{" "}
-                  <strong>Elasticsearch </strong>and automated essay drafting.
-                </li>
-                <li>
-                  Scraped and tagged data for 1500 firms, eliminating 95%
-                  irrelevant content.
-                </li>
-                <li>
-                  Gathered up-to-date company info with RPA and Perplexity
-                  queries.
-                </li>
-              </ul>
-            </li>
-
-            {/* Experience 2: Researcher at UCSB */}
-            <li className="mb-12 p-8 border-2 rounded-xl shadow-2xl bg-white max-w-screen-lg mx-auto">
-              <h3 className="text-3xl font-bold text-left">
-                Student Researcher - Early Research Scholars Program (ERSP)
-              </h3>
-              <p className="text-xl mt-6 font-semibold">
-                September 2023 - Present | 8 hrs/week
-              </p>
-              <ul className="list-disc pl-6 mt-4">
-                <li>
-                  Researched Vision-language Models to enhance the Method of
-                  Loci memory technique.
-                </li>
-                <li>
-                  Collaborated with 3 undergraduates, 2 PhD mentors, and 1
-                  professor.
-                </li>
-                <li>
-                  Developed and maintained a <strong>React-based </strong>web
-                  platform for over 50 participants.
-                </li>
-                <li>
-                  Integrated OpenAI API to generate personalized text and images
-                  for &ldquo;memory palaces&ldquo;.
-                </li>
-                <li>
-                  Conducted 50+ experiments and automated processes, cutting
-                  time costs by 60%.
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </section>
       {/* Section 5: Contact Us */}
       <section
         id="contact"
